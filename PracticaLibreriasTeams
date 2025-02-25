@@ -1,0 +1,33 @@
+/* Clase 6
+Practica
+ 
+Ejercicio: Gestión de un Libro y su Autor
+Descripción:
+Crea un programa en Java que permita gestionar la información de un libro y su autor. El programa debe permitir al usuario ingresar los datos del libro y del autor, y luego mostrar toda la información registrada.
+Requisitos:
+Define una clase para representar un libro. Piensa en los atributos que debe tener para almacenar la información necesaria (por ejemplo, título, género, año de publicación).
+Define una clase para representar un autor. Esta clase debe incluir información como nombre completo, fecha de nacimiento, fecha de muerte (si aplica) y correo electrónico.
+Implementa métodos para:
+Inicializar los datos del libro y del autor.
+Mostrar la información completa del libro y del autor.
+En la clase principal, crea un programa que permita al usuario:
+Ingresar los datos del libro y del autor.
+Mostrar toda la información registrada.
+Objetivo:
+Este ejercicio te ayudará a practicar los conceptos básicos de la Programación Orientada a Objetos (POO), como la creación de clases, la definición de atributos y métodos, y la relación entre objetos (en este caso, un libro y su autor). Además, te familiarizarás con la lógica de inicialización y visualización de datos.
+Ejemplo de Funcionamiento:
+El usuario ingresa los datos del libro (título, género, año de publicación).
+Luego, ingresa los datos del autor (nombre completo, fecha de nacimiento, fecha de muerte si aplica, y correo electrónico).
+Finalmente, el programa muestra toda la información del libro y del autor.
+Nota:
+No es necesario almacenar múltiples libros o autores. El programa trabajará con un solo libro y su autor a la vez, lo que simplifica el ejercicio y permite centrarse en los conceptos básicos de POO.
+ 
+Preguntas para reflexionar:
+¿Qué atributos son necesarios para representar un libro y un autor?
+¿Cómo se relacionan las clases Libro y Autor?
+¿Qué métodos son necesarios para inicializar y mostrar la información?
+*/
+
+
+*/
+ 
