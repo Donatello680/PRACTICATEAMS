@@ -1,4 +1,4 @@
-import java.
+import javax.swing.JOptionPane;
 
 class Autor {
     private String nombre;
@@ -16,11 +16,11 @@ class Autor {
 
     // Método para mostrar información del autor
     public void mostrarInformacion() {
-        System.out.println("\nInformación del Autor:");
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Fecha de Nacimiento: " + fechaNacimiento);
-        System.out.println("Fecha de Muerte: " + (fechaMuerte.equals("") ? "N/A" : fechaMuerte));
-        System.out.println("Correo: " + correo);
+        JOptionPane.showMessageDialog(null, "Información del Autor:\n" +
+                "Nombre: " + nombre + "\n" +
+                "Fecha de Nacimiento: " + fechaNacimiento + "\n" +
+                "Fecha de Muerte: " + (fechaMuerte.compareTo("") == 0 ? "N/A" : fechaMuerte) + "\n" +
+                "Correo: " + correo);
     }
 }
 
@@ -40,10 +40,10 @@ class Libro {
 
     // Método para mostrar información del libro
     public void mostrarInformacion() {
-        System.out.println("\nInformación del Libro:");
-        System.out.println("Título: " + titulo);
-        System.out.println("Género: " + genero);
-        System.out.println("Año de Publicación: " + anioPublicacion);
+        JOptionPane.showMessageDialog(null, "Información del Libro:\n" +
+                "Título: " + titulo + "\n" +
+                "Género: " + genero + "\n" +
+                "Año de Publicación: " + anioPublicacion);
         autor.mostrarInformacion();
     }
 }
@@ -51,31 +51,35 @@ class Libro {
 public class GestionLibroAutor {
     // Método principal (main)
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        JOptionPane.showMessageDialog(null, "Ingrese la información del autor:");
+        String nombreAutor = JOptionPane.showInputDialog("Nombre completo:");
+        if (nombreAutor == null) nombreAutor = "Gabriel García Márquez";
+        
+        String fechaNacimiento = JOptionPane.showInputDialog("Fecha de nacimiento:");
+        if (fechaNacimiento == null) fechaNacimiento = "06/03/1927";
+        
+        String fechaMuerte = JOptionPane.showInputDialog("Fecha de muerte (si aplica):");
+        if (fechaMuerte == null) fechaMuerte = "17/04/2014";
+        
+        String correo = JOptionPane.showInputDialog("Correo electrónico:");
+        if (correo == null) correo = "gabriel@email.com";
 
-        System.out.println("Ingrese la información del autor:");
-        System.out.print("Nombre completo: ");
-        System.out.println("Gabriel García Márquez");
-        System.out.print("Fecha de nacimiento: ");
-        System.out.println("06/03/1927");
-        System.out.print("Fecha de muerte (si aplica): ");
-        System.out.println("17/04/2014");
-        System.out.print("Correo electrónico: ");
-        System.out.println("gabriel@email.com");
+        Autor autor = new Autor(nombreAutor, fechaNacimiento, fechaMuerte, correo);
 
-        Autor autor = new Autor("Gabriel García Márquez", "06/03/1927", "17/04/2014", "gabriel@email.com");
-
-        System.out.println("\nIngrese la información del libro:");
-        System.out.print("Título: ");
-        System.out.println("Cien años de soledad");
-        System.out.print("Género: ");
-        System.out.println("Realismo mágico");
-        System.out.print("Año de publicación: ");
-        System.out.println("1967");
-
-        Libro libro = new Libro("Cien años de soledad", "Realismo mágico", 1967, autor);
-
+        JOptionPane.showMessageDialog(null, "Ingrese la información del libro:");
+        String titulo = JOptionPane.showInputDialog("Título:");
+        if (titulo == null) titulo = "Cien años de soledad";
+        
+        String genero = JOptionPane.showInputDialog("Género:");
+        if (genero == null) genero = "Realismo mágico";
+        
+        String anioStr = JOptionPane.showInputDialog("Año de publicación:");
+        int anioPublicacion = (anioStr == null) ? 1967 : Integer.parseInt(anioStr);
+        
+        Libro libro = new Libro(titulo, genero, anioPublicacion, autor);
+        
         // Mostrar información del libro y autor
         libro.mostrarInformacion();
     }
 }
+
