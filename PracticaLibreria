@@ -1,0 +1,81 @@
+import java.
+
+class Autor {
+    private String nombre;
+    private String fechaNacimiento;
+    private String fechaMuerte;
+    private String correo;
+
+    // Constructor
+    public Autor(String nombre, String fechaNacimiento, String fechaMuerte, String correo) {
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+        this.fechaMuerte = fechaMuerte;
+        this.correo = correo;
+    }
+
+    // Método para mostrar información del autor
+    public void mostrarInformacion() {
+        System.out.println("\nInformación del Autor:");
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Fecha de Nacimiento: " + fechaNacimiento);
+        System.out.println("Fecha de Muerte: " + (fechaMuerte.equals("") ? "N/A" : fechaMuerte));
+        System.out.println("Correo: " + correo);
+    }
+}
+
+class Libro {
+    private String titulo;
+    private String genero;
+    private int anioPublicacion;
+    private Autor autor;
+
+    // Constructor
+    public Libro(String titulo, String genero, int anioPublicacion, Autor autor) {
+        this.titulo = titulo;
+        this.genero = genero;
+        this.anioPublicacion = anioPublicacion;
+        this.autor = autor;
+    }
+
+    // Método para mostrar información del libro
+    public void mostrarInformacion() {
+        System.out.println("\nInformación del Libro:");
+        System.out.println("Título: " + titulo);
+        System.out.println("Género: " + genero);
+        System.out.println("Año de Publicación: " + anioPublicacion);
+        autor.mostrarInformacion();
+    }
+}
+
+public class GestionLibroAutor {
+    // Método principal (main)
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ingrese la información del autor:");
+        System.out.print("Nombre completo: ");
+        System.out.println("Gabriel García Márquez");
+        System.out.print("Fecha de nacimiento: ");
+        System.out.println("06/03/1927");
+        System.out.print("Fecha de muerte (si aplica): ");
+        System.out.println("17/04/2014");
+        System.out.print("Correo electrónico: ");
+        System.out.println("gabriel@email.com");
+
+        Autor autor = new Autor("Gabriel García Márquez", "06/03/1927", "17/04/2014", "gabriel@email.com");
+
+        System.out.println("\nIngrese la información del libro:");
+        System.out.print("Título: ");
+        System.out.println("Cien años de soledad");
+        System.out.print("Género: ");
+        System.out.println("Realismo mágico");
+        System.out.print("Año de publicación: ");
+        System.out.println("1967");
+
+        Libro libro = new Libro("Cien años de soledad", "Realismo mágico", 1967, autor);
+
+        // Mostrar información del libro y autor
+        libro.mostrarInformacion();
+    }
+}
