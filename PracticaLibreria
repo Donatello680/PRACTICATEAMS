@@ -74,7 +74,13 @@ public class GestionLibroAutor {
         if (genero == null) genero = "Realismo mágico";
         
         String anioStr = JOptionPane.showInputDialog("Año de publicación:");
-        int anioPublicacion = (anioStr == null) ? 1967 : Integer.parseInt(anioStr);
+int anioPublicacion;
+if (anioStr == null) {
+    anioPublicacion = 1967;
+} else {
+    anioPublicacion = Integer.parseInt(anioStr);
+}
+
         
         Libro libro = new Libro(titulo, genero, anioPublicacion, autor);
         
